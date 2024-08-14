@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+h1, h2 {
+    color: #333;
+}
+
+header, main, aside, footer {
+    padding: 20px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #555;
+}
+/* Header Styles */
+.header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header nav ul {
+    display: flex;
+    gap: 15px;
+}
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.header nav ul li a:hover {
+    background-color: #45a049;
+    border-radius: 5px;
+}
+/* Admin Panel Styles */
+#admin-controls {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#admin-product-form input, #admin-product-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#admin-product-form button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* Product Listing Styles */
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.product h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.product p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+/* Cart Styles */
+#cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+}
+#cart h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#cart-items img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+}
+#cart-total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#cart button {
+    width: 100%;
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px; 
+    text-align: center;
+}
+.modal-content img{
+    width: 30%;
+}
+.modal button{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}  
+/* User Management Styles */
+#admin-user-controls {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#user-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#user-list li button {
+    background-color: #ff4d4d;
+}
+#user-list li button:hover {
+    background-color: #ff1a1a;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+    }
+
+    .header nav ul li {
+        margin-bottom: 10px;
+    }
+}
+nav .fa-xmark{
+    display: none;
+}
+nav .fa-bars{
+    display: none;
+}
+@media(max-width:700px){
+    .menu ul li{
+        display: block;
+    }
+    .menu ul li a{
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+    }    
+    .menu{
+        position: absolute;
+        background: antiquewhite;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa-solid{
+        display: block;
+        margin: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+#search-input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-right: 0.5rem;
+}
+#search-button {
+    background-color:white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+#search-button i {
+    margin-right: 0.2rem;
+}
+#search-button:hover {
+    background-color: #555;
+}

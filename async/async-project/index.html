@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf7c7dd886.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>philo-tech store</title>
+</head>
+<body>
+<section class="header">
+    <div class="top">
+        <h1>PHILO-TECH STORE</h1>
+        <nav>
+            <div class="menu" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#" id="user-login"><i class="fa-solid fa-user"></i>User Login</a></li>
+                    <li><a href="#" id="list-products"><i class="fa-brands fa-shopify"></i>All Product</a></li>
+                    <li>
+                        <div id="search-container">
+                            <input type="text" id="search-input" placeholder="Search products...">
+                            <button id="search-button">Search</button>
+                        </div>
+                    </li>
+                    <li><a href="#" id="cart-link"><i class="fa-solid fa-cart-shopping"></i>CART</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </div>
+</section>
+<main>    
+    <aside>
+        <div id="disp_div">
+            <button class="btns" id='electronics'>Eletronics</button>
+            <button class="btns" id="jewelry">Jewelry</button>
+            <button class="btns" id="menC">Men's Clothing</button>
+            <button class="btns" id="womenC">Women's Clothing</button>
+        </div>
+    </aside>
+
+    <!-- Sorting and Limiting Options -->
+    <div id="controls">
+        <label for="sort-select">Sort By:</label>
+        <select id="sort-select">
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+        </select>
+        <label for="limit-select">Show:</label>
+        <input type="number" id="limit-select" placeholder="Number of products" min="1">
+        <button id="apply-filters">Apply</button>
+    </div>
+
+    <div id="products"></div>    
+</main>
+<aside id="cart" class="cart">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <button id="close-cart-button">Close Cart</button>
+</aside>
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-price"></p>
+        <button id="add-to-cart-button">Add to Cart</button>
+    </div>
+</div>
+<!-- Admin Controls -->
+<section id="admin-controls">
+    <h2>Admin Panel</h2>
+    <form id="admin-product-form">
+        <input type="hidden" id="product-id">
+        <input type="text" id="product-title" placeholder="Product Title" required>
+        <input type="number" id="product-price" placeholder="Price" required>
+        <input type="text" id="product-category" placeholder="Category" required>
+        <input type="text" id="product-image" placeholder="Image URL" required>
+        <textarea id="product-description" placeholder="Product Description" required></textarea>
+        <button type="submit" id="add-product">Add Product</button>
+        <button type="submit" id="update-product" style="display:none;">Update Product</button>
+    </form>
+    <button id="delete-product" style="display:none;">Delete Product</button>
+</section>
+<!-- User Management Section -->
+<section id="admin-user-controls">
+    <h2>User Management</h2>
+    <ul id="user-list"></ul>
+</section>
+<script src="input.js"></script>
+</body>
+<footer>   
+    <h1>&copy; 2024 E-commerce</h1>
+</footer>
+</html>
